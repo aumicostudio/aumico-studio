@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080b14;
+  --surface: #111626;
+  --text: #f8fafc;
+  --muted: #a5aec3;
+  --accent: #8b5cf6;
+  --border: #252b40;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 11, 20, 0.92);
+}
+
+.navbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #7544e8;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid #41465d;
+  color: white;
+}
+
+.hero {
+  padding: 110px 0 90px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, #241447 0%, transparent 58%);
+}
+
+.eyebrow {
+  color: #bba5ff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 0 auto 22px;
+  font-size: clamp(2.7rem, 7vw, 5.4rem);
+  line-height: 1.08;
+  letter-spacing: -3px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #c4b5fd, #8b5cf6, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 610px;
+  margin: 0 auto 30px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.services {
+  padding: 75px 0 100px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #141a2b, #0e1220);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 18px;
+  transition: 0.25s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #261b46;
+  border-radius: 13px;
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.contact {
+  text-align: center;
+  padding: 70px 24px;
+  margin-bottom: 80px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: radial-gradient(ellipse at top, #21143e, #111626);
+}
+
+.contact h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 14px;
+}
+
+.contact p {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    min-height: 72px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar > .btn {
+    padding: 10px 13px;
+    font-size: 0.82rem;
+  }
+
+  .hero {
+    padding: 80px 0 65px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+
+  .services {
+    padding: 60px 0 75px;
+  }
+}
