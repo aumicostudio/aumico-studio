@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://eapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   --bg: #080b14;
@@ -237,8 +237,7 @@ footer {
     min-height: 72px;
   }
 
-  .nav-links {
-    display: none;
+  
   }
 
   .navbar > .btn {
@@ -264,5 +263,501 @@ footer {
 
   .services {
     padding: 60px 0 75px;
+  }
+/* ===== AUMICO STUDIO - PREMIUM PORTFOLIO ===== */
+
+.portfolio {
+  padding: 100px 7%;
+  background: #0b0b10;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  color: #b69cff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+.portfolio-container > h2 {
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin: 0 0 20px;
+}
+
+.portfolio-container > h2 span {
+  color: #a78bfa;
+}
+
+.portfolio-description {
+  max-width: 600px;
+  color: #a4a4b5;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 45px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  min-width: 0;
+  background: #12121a;
+  border: 1px solid #292637;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #a78bfa;
+}
+
+.project-preview {
+  min-height: 250px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-preview > span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.project-preview h3 {
+  font-size: clamp(23px, 2.5vw, 32px);
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.project-preview p {
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.restaurant-preview {
+  background: linear-gradient(135deg, #38251f, #9c5838);
+}
+
+.business-preview {
+  background: linear-gradient(135deg, #17172f, #5142a3);
+}
+
+.store-preview {
+  background: linear-gradient(135deg, #163a35, #327e70);
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 20px;
+}
+
+.project-info h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.project-info p {
+  color: #a4a4b5;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-number {
+  color: #b69cff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Tablet and mobile responsive layout */
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio {
+    padding: 70px 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-preview {
+    min-height: 230px;
+  }
+}
+/* ===== AUMICO STUDIO PREMIUM CARD UPGRADE ===== */
+
+.portfolio {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 0%, #21163b 0%, transparent 55%),
+    #09090f;
+}
+
+.portfolio-container > h2 {
+  max-width: 750px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.portfolio-description {
+  max-width: 540px;
+}
+
+.portfolio-grid {
+  gap: 28px;
+  align-items: stretch;
+}
+
+.project-card {
+  position: relative;
+  background: linear-gradient(145deg, #171521, #0d0c13);
+  border: 1px solid rgba(167, 139, 250, 0.19);
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(183, 156, 255, 0.75);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(139, 92, 246, 0.12);
+}
+
+.project-preview {
+  min-height: 270px;
+  padding: 30px;
+  transition: background 0.35s ease;
+}
+
+.restaurant-preview {
+  background:
+    radial-gradient(ellipse at 90% 15%, rgba(255, 191, 130, 0.24), transparent 45%),
+    linear-gradient(145deg, #211714, #71402f);
+}
+
+.business-preview {
+  background:
+    radial-gradient(ellipse at 90% 15%, rgba(183, 156, 255, 0.28), transparent 45%),
+    linear-gradient(145deg, #131226, #39306c);
+}
+
+.store-preview {
+  background:
+    radial-gradient(ellipse at 90% 15%, rgba(122, 235, 207, 0.22), transparent 45%),
+    linear-gradient(145deg, #10211f, #24584d);
+}
+
+.project-preview > span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+}
+
+.project-preview h3 {
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.project-preview p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.project-info {
+  min-height: 100px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.project-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.project-info p {
+  color: #aaa6bd;
+  line-height: 1.7;
+}
+
+.project-number {
+  align-self: flex-start;
+  padding: 7px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 9px;
+  background: rgba(167, 139, 250, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-container > h2 {
+    letter-spacing: -1px;
+  }
+
+  .portfolio-grid {
+    gap: 20px;
+  }
+
+  .project-preview {
+    min-height: 240px;
+  }
+
+  .project-info {
+    padding: 20px;
+  }
+}
+/* MINI WEBSITE PREVIEWS */
+
+.mini-browser {
+  width: 100%;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #101015;
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px;
+  background: #201e29;
+}
+
+.browser-bar > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a78bfa;
+}
+
+.browser-bar small {
+  margin-left: 8px;
+  color: #d2cddd;
+  font-size: 9px;
+}
+
+.mini-site {
+  min-height: 165px;
+  padding: 14px;
+  color: white;
+}
+
+.restaurant-site {
+  background: linear-gradient(135deg, #302019, #9a6041);
+}
+
+.mini-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.mini-nav span {
+  font-size: 8px;
+  font-weight: normal;
+}
+
+.mini-content {
+  padding: 18px 0 8px;
+}
+
+.mini-content small {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.mini-content h4 {
+  margin: 8px 0 12px;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.mini-content button {
+  padding: 8px 11px;
+  border: 0;
+  border-radius: 3px;
+  background: #fff;
+  color: #24170f;
+  font-size: 8px;
+  font-weight: bold;
+}
+/* ===== AUMICO STUDIO: FINAL PORTFOLIO POLISH ===== */
+
+.portfolio {
+  padding: 110px 7%;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(110, 70, 190, 0.14), transparent 55%),
+    #09090f;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(180, 155, 255, 0.22);
+  border-radius: 20px;
+  background: linear-gradient(160deg, #171520, #0e0d14);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(180, 155, 255, 0.7);
+  box-shadow: 0 18px 38px rgba(100, 70, 180, 0.17);
+}
+
+.mini-browser {
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111019;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.browser-bar {
+  min-height: 28px;
+  padding: 8px 10px;
+}
+
+.mini-site {
+  min-height: 180px;
+  padding: 16px;
+}
+
+.mini-content h4 {
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.mini-content button {
+  cursor: default;
+  border-radius: 5px;
+  letter-spacing: 0.3px;
+}
+
+.project-preview {
+  flex: 1;
+  min-width: 0;
+  padding: 22px;
+}
+
+.project-info {
+  margin-top: auto;
+  min-height: 105px;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.project-info h3 {
+  line-height: 1.4;
+}
+
+.project-info p {
+  overflow-wrap: anywhere;
+}
+
+.project-number {
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .portfolio {
+    padding: 80px 5%;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio {
+    padding: 65px 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-preview {
+    padding: 18px;
+  }
+
+  .mini-site {
+    min-height: 170px;
   }
 }
