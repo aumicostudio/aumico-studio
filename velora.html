@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELORA is a fictional premium lifestyle storefront concept featuring curated fashion, accessories, and timeless essentials.">
+  <meta name="theme-color" content="#f7f3ed">
+  <title>VELORA — A More Considered Wardrobe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f7f3ed;
+      --paper: #fffdf9;
+      --sand: #e9dfd0;
+      --beige: #c7b59c;
+      --ink: #25231f;
+      --muted: #77736b;
+      --line: #e6dfd5;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    img { display: block; max-width: 100%; }
+
+    .container { width: min(1220px, 90%); margin: auto; }
+
+    .announcement {
+      background: var(--ink);
+      color: #f5ead9;
+      text-align: center;
+      padding: 9px 12px;
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,253,249,.96);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 28px;
+      letter-spacing: 5px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 30px;
+      font-size: 12px;
+    }
+
+    .nav-links a:hover, .footer-links a:hover { color: #9b7751; }
+
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+
+    .cart-button {
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .cart-count {
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: white;
+      display: inline-grid;
+      place-items: center;
+      font-size: 10px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      min-height: 590px;
+      background: var(--cream);
+    }
+
+    .hero-copy {
+      padding: 80px 8% 75px max(8%, calc((100vw - 1220px) / 2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #8e7557;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 { line-height: 1.2; }
+
+    h1 {
+      font: 500 clamp(43px, 5.5vw, 72px)/1.13 var(--serif);
+      letter-spacing: -1.7px;
+      margin-bottom: 24px;
+    }
+
+    h1 em, h2 em { font-weight: 400; }
+
+    .hero-copy > p:not(.eyebrow) {
+      color: var(--muted);
+      max-width: 390px;
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 13px 23px;
+      background: var(--ink);
+      color: white;
+      border: 1px solid var(--ink);
+      font-size: 11px;
+      letter-spacing: .7px;
+      transition: .25s ease;
+    }
+
+    .button:hover { background: #51463a; border-color: #51463a; transform: translateY(-2px); }
+
+    .button-light {
+      background: transparent;
+      color: var(--ink);
+      border-color: #bfb4a5;
+    }
+
+    .button-light:hover { color: white; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+    .hero-visual {
+      min-height: 590px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 36px;
+      background:
+        linear-gradient(180deg, rgba(29,25,20,.02), rgba(29,25,20,.3)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85") center 40%/cover,
+        #d5c4ad;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(29,25,20,.42), transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-caption {
+      position: relative;
+      z-index: 1;
+      color: white;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .hero-caption strong {
+      display: block;
+      font: 28px var(--serif);
+    }
+
+    .hero-caption span { font-size: 10px; letter-spacing: 1.5px; }
+
+    .benefits {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px 65px;
+      padding: 24px 5%;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .benefits span {
+      color: #5f5a51;
+      font-size: 10px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .benefits span::before { content: "✦"; margin-right: 9px; color: #a78c67; }
+
+    section.content-section { padding: 90px 0; }
+
+    .section-heading { text-align: center; max-width: 670px; margin: 0 auto 45px; }
+
+    h2 {
+      font: 500 clamp(34px, 4.4vw, 49px)/1.2 var(--serif);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p { color: var(--muted); font-size: 13px; }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .category-card { display: block; }
+
+    .category-image {
+      height: 320px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 23px;
+      overflow: hidden;
+      background-color: var(--sand);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .category-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.43), transparent 55%);
+      transition: .3s;
+    }
+
+    .category-card:hover .category-image::after { background: linear-gradient(0deg, rgba(0,0,0,.56), transparent 70%); }
+
+    .category-image span {
+      z-index: 1;
+      color: white;
+      font: 25px var(--serif);
+    }
+
+    .cat-clothing {
+      background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .cat-accessories {
+      background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .cat-lifestyle {
+      background-image: url("https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .category-meta { padding-top: 16px; display: flex; justify-content: space-between; gap: 10px; font-size: 12px; }
+    .category-meta span:last-child { color: var(--muted); }
+
+    .products-section { background: var(--cream); }
+
+    .shop-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 28px;
+    }
+
+    .filter-buttons { display: flex; flex-wrap: wrap; gap: 9px; }
+
+    .filter-button {
+      border: 1px solid #d6cdc0;
+      background: transparent;
+      padding: 9px 15px;
+      color: #5f584f;
+      font-size: 10px;
+      transition: .2s;
+    }
+
+    .filter-button.active, .filter-button:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: white;
+    }
+
+    .shop-count { font-size: 11px; color: var(--muted); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px 17px;
+    }
+
+    .product-card { min-width: 0; }
+
+    .product-image {
+      position: relative;
+      height: 275px;
+      overflow: hidden;
+      background: #e7ded2;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .product-card:hover .product-image img { transform: scale(1.045); }
+
+    .product-tag {
+      position: absolute;
+      left: 11px;
+      top: 11px;
+      background: var(--paper);
+      padding: 6px 9px;
+      font-size: 9px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .product-details { padding: 14px 2px 0; }
+
+    .product-category {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .product-title { font-size: 13px; font-weight: 600; margin: 5px 0 7px; }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .product-price { font-size: 12px; font-weight: 700; }
+
+    .add-button {
+      border: 1px solid #c9bdad;
+      background: transparent;
+      padding: 8px 10px;
+      font-size: 10px;
+      transition: .2s;
+      white-space: nowrap;
+    }
+
+    .add-button:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+    .no-products { grid-column: 1/-1; padding: 35px; text-align: center; color: var(--muted); }
+
+    .editorial {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      background: #e9e0d4;
+      min-height: 430px;
+    }
+
+    .editorial-image {
+      min-height: 430px;
+      background: url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=85") center/cover;
+    }
+
+    .editorial-copy {
+      padding: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .editorial-copy h2 { font-size: clamp(33px, 4vw, 47px); }
+    .editorial-copy p { color: #71695e; font-size: 13px; margin-top: 8px; }
+
+    .editorial-copy .button { margin-top: 25px; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .value-card { text-align: center; padding: 20px; }
+
+    .value-icon { font-size: 24px; margin-bottom: 15px; color: #9b7e55; }
+    .value-card h3 { font: 21px var(--serif); margin-bottom: 10px; }
+    .value-card p { color: var(--muted); font-size: 12px; }
+
+    .newsletter {
+      background: #eae1d5;
+      padding: 65px 20px;
+      text-align: center;
+    }
+
+    .newsletter-inner { max-width: 570px; margin: auto; }
+    .newsletter h2 { font-size: 38px; }
+    .newsletter p { color: var(--muted); font-size: 12px; margin: 13px 0 23px; }
+
+    .newsletter-form { display: flex; max-width: 460px; margin: auto; gap: 8px; }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px;
+      background: var(--paper);
+      border: 1px solid #d2c6b6;
+      outline: none;
+      font-size: 12px;
+    }
+
+    .newsletter-form input:focus { border-color: #8c775e; }
+
+    .form-message { font-size: 11px; margin-top: 13px; color: #62584a; }
+
+    footer { background: #25231f; color: #f5eee4; padding: 55px 0 20px; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr .7fr;
+      gap: 45px;
+      padding-bottom: 40px;
+    }
+
+    .footer-logo { font: 28px var(--serif); letter-spacing: 4px; }
+
+    .footer-description { max-width: 300px; color: #c1b9ad; font-size: 12px; margin-top: 16px; }
+
+    .footer-heading {
+      font-size: 10px;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: #d6c1a3;
+    }
+
+    .footer-links { list-style: none; display: grid; gap: 10px; color: #d5cec3; font-size: 11px; }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid #48443d;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: #c1b9ad;
+      font-size: 10px;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(20,18,15,.45);
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: .25s;
+    }
+
+    .overlay.open { opacity: 1; visibility: visible; }
+
+    .cart-drawer {
+      position: fixed;
+      z-index: 201;
+      top: 0;
+      right: 0;
+      width: min(420px, 100%);
+      height: 100dvh;
+      background: var(--paper);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(105%);
+      transition: transform .3s ease;
+    }
+
+    .cart-drawer.open { transform: translateX(0); }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-header h2 { font-size: 26px; margin: 0; }
+
+    .close-cart { border: 0; background: transparent; font-size: 25px; padding: 5px 10px; }
+
+    .cart-items { flex: 1; overflow-y: auto; padding: 15px 0; }
+
+    .empty-cart { text-align: center; padding: 50px 0; color: var(--muted); font-size: 13px; }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 65px 1fr auto;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+
+    .cart-item img { width: 65px; height: 78px; object-fit: cover; background: var(--sand); }
+    .cart-item strong { display: block; font-size: 12px; }
+    .cart-item small { color: var(--muted); font-size: 11px; }
+    .quantity-controls { display: flex; gap: 10px; align-items: center; margin-top: 8px; font-size: 11px; }
+    .quantity-controls button { border: 1px solid var(--line); background: white; width: 24px; height: 24px; }
+    .remove-item { border: 0; background: transparent; color: #8c6c52; font-size: 10px; margin-top: 7px; }
+    .cart-item-price { font-size: 11px; font-weight: 700; white-space: nowrap; }
+
+    .cart-footer { border-top: 1px solid var(--line); padding-top: 20px; }
+    .subtotal { display: flex; justify-content: space-between; margin-bottom: 17px; font-size: 13px; font-weight: 700; }
+    .cart-footer .button { width: 100%; }
+    .cart-note { color: var(--muted); font-size: 10px; margin-top: 12px; }
+
+    .demo-disclaimer { font-size: 10px; color: #a49b8e; margin-top: 12px; }
+
+    @media (max-width: 950px) {
+      .hero-copy { padding-left: 6%; }
+      .hero-visual { min-height: 500px; }
+      .products-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .product-image { height: 260px; }
+      .nav-links { gap: 17px; }
+      .editorial-copy { padding: 38px; }
+    }
+
+    @media (max-width: 650px) {
+      .container { width: 90%; }
+      .announcement { font-size: 8px; letter-spacing: 1px; }
+      .navbar { min-height: auto; padding: 15px 0 12px; flex-wrap: wrap; gap: 13px; }
+      .logo { font-size: 24px; }
+      .nav-links { order: 3; width: 100%; justify-content: space-between; gap: 8px; font-size: 10px; }
+      .nav-right { margin-left: auto; gap: 12px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 65px 5%; }
+      h1 { font-size: clamp(43px, 12vw, 61px); }
+      .hero-visual { min-height: 390px; padding: 23px; }
+      .hero-caption strong { font-size: 24px; }
+      .benefits { gap: 12px 22px; padding: 20px 5%; }
+      .benefits span { font-size: 9px; }
+      section.content-section { padding: 65px 0; }
+      .section-heading { margin-bottom: 30px; }
+      h2 { font-size: 35px; }
+      .categories-grid { grid-template-columns: 1fr; gap: 25px; }
+      .category-image { height: 330px; }
+      .shop-toolbar { align-items: flex-start; flex-direction: column; }
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 12px; }
+      .product-image { height: clamp(180px, 57vw, 270px); }
+      .product-title { font-size: 12px; }
+      .product-bottom { align-items: flex-start; flex-direction: column; }
+      .add-button { width: 100%; }
+      .editorial { grid-template-columns: 1fr; }
+      .editorial-image { min-height: 330px; }
+      .editorial-copy { padding: 38px 7%; }
+      .values-grid { grid-template-columns: 1fr; gap: 12px; }
+      .value-card { padding: 15px; }
+      .newsletter { padding: 55px 5%; }
+      .newsletter h2 { font-size: 33px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form .button { width: 100%; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px 18px; }
+      .footer-brand-block { grid-column: 1/-1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cart-drawer { padding: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    A considered collection · VELORA concept store · Demo storefront
+  </div>
+
+  <header>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="logo" href="#home">VELORA</a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Collections</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#story">Our Story</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="cart-button" id="openCart" type="button" aria-label="Open shopping bag">
+          Bag <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">The art of everyday living</div>
+        <h1>A little less,<br>a lot <em>more.</em></h1>
+        <p>
+          Discover timeless essentials, considered details, and pieces that
+          feel just as good tomorrow as they do today.
+        </p>
+        <div class="hero-actions">
+          <a href="#shop" class="button">Explore the Collection ↗</a>
+          <a href="#story" class="button button-light">Our Philosophy</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" role="img" aria-label="Fashion editorial photograph for the VELORA concept store">
+        <div class="hero-caption">
+          <div>
+            <span>THE EVERYDAY EDIT</span>
+            <strong>Quietly distinctive.</strong>
+          </div>
+          <span>COLLECTION 01 / 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="benefits">
+      <span>Timeless by design</span>
+      <span>Considered essentials</span>
+      <span>Made for everyday</span>
+    </div>
+
+    <section class="content-section" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Find your favourites</div>
+          <h2>Curated for <em>your everyday.</em></h2>
+          <p>Explore three thoughtful directions in fashion, accessories, and modern living.</p>
+        </div>
+
+        <div class="categories-grid">
+          <a class="category-card" href="#shop" data-category-link="Clothing">
+            <div class="category-image cat-clothing"><span>Everyday Wear ↗</span></div>
+            <div class="category-meta"><span>Clothing</span><span>Explore the edit</span></div>
+          </a>
+
+          <a class="category-card" href="#shop" data-category-link="Accessories">
+            <div class="category-image cat-accessories"><span>Finishing Touches ↗</span></div>
+            <div class="category-meta"><span>Accessories</span><span>Explore the edit</span></div>
+          </a>
+
+          <a class="category-card" href="#shop" data-category-link="Lifestyle">
+            <div class="category-image cat-lifestyle"><span>Thoughtful Living ↗</span></div>
+            <div class="category-meta"><span>Lifestyle</span><span>Explore the edit</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section products-section" id="shop">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">The VELORA edit</div>
+          <h2>Pieces to <em>keep close.</em></h2>
+          <p>Discover our fictional product collection. Add items to your bag to explore the storefront demo.</p>
+        </div>
+
+        <div class="shop-toolbar">
+          <div class="filter-buttons" role="group" aria-label="Filter products">
+            <button type="button" class="filter-button active" data-filter="All">All pieces</button>
+            <button type="button" class="filter-button" data-filter="Clothing">Clothing</button>
+            <button type="button" class="filter-button" data-filter="Accessories">Accessories</button>
+            <button type="button" class="filter-button" data-filter="Lifestyle">Lifestyle</button>
+          </div>
+          <div class="shop-count" id="productCount">8 pieces</div>
+        </div>
+
+        <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+
+        <p class="demo-disclaimer">All products, names, images, and prices are used for this fictional portfolio demonstration. No real products are sold here.</p>
+      </div>
+    </section>
+
+    <section class="container content-section" id="story">
+      <div class="editorial">
+        <div class="editorial-image" role="img" aria-label="Minimal fashion boutique interior"></div>
+        <div class="editorial-copy">
+          <div class="eyebrow">The VELORA philosophy</div>
+          <h2>Choose well.<br><em>Keep longer.</em></h2>
+          <p>
+            We believe good design lives in the details: thoughtful forms,
+            versatile pieces, and a sense of calm that never goes out of style.
+          </p>
+          <p>
+            VELORA is a fictional lifestyle brand concept exploring a quieter,
+            more intentional approach to modern shopping.
+          </p>
+          <a class="button" href="#shop">Discover the Edit ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What guides us</div>
+          <h2>Designed around <em>what matters.</em></h2>
+          <p>A few principles behind this imagined lifestyle brand.</p>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-card">
+            <div class="value-icon">◇</div>
+            <h3>Thoughtful Design</h3>
+            <p>Clean lines, considered details, and a timeless visual language.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon">✳</div>
+            <h3>Everyday Versatility</h3>
+            <p>Concepts inspired by pieces that work naturally with daily life.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon">○</div>
+            <h3>Less, but Better</h3>
+            <p>A design philosophy centred on intention rather than excess.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-inner">
+        <div class="eyebrow">A note from VELORA</div>
+        <h2>A little more <em>inspiration.</em></h2>
+        <p>Try the newsletter interaction in this storefront concept. No details are sent to a server.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Your email address" required>
+          <button class="button" type="submit">Join the List ↗</button>
+        </form>
+        <p class="form-message" id="newsletterMessage" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <a class="footer-logo" href="#home">VELORA</a>
+          <p class="footer-description">
+            A fictional premium lifestyle storefront concept built around
+            thoughtful design, timeless essentials, and considered living.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Explore</div>
+          <ul class="footer-links">
+            <li><a href="#categories">Collections</a></li>
+            <li><a href="#shop">Shop all</a></li>
+            <li><a href="#story">Our philosophy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Information</div>
+          <ul class="footer-links">
+            <li><a href="#story">About VELORA</a></li>
+            <li><a href="#shop">Product concepts</a></li>
+            <li><a href="#home">Back to top ↑</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> VELORA · Fictional portfolio concept.</span>
+        <span>Designed with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="cart-header">
+      <h2 id="cartTitle">Your Bag</h2>
+      <button type="button" class="close-cart" id="closeCart" aria-label="Close shopping bag">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">£0.00</span>
+      </div>
+      <button class="button" id="checkoutButton" type="button">Continue to Enquiry ↗</button>
+      <p class="cart-note">This demo bag is not connected to payment or inventory systems.</p>
+    </div>
+  </aside>
+
+  <script>
+    // Fictional demonstration products and prices.
+    const products = [
+      {
+        id: 1,
+        name: "The Everyday Shirt",
+        category: "Clothing",
+        price: 48,
+        tag: "Bestseller",
+        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 2,
+        name: "Soft Knit Layer",
+        category: "Clothing",
+        price: 64,
+        tag: "New",
+        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 3,
+        name: "The Classic Jacket",
+        category: "Clothing",
+        price: 92,
+        tag: "",
+        image: "https://images.unsplash.com/photo-1548126032-079a0fb0099d?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 4,
+        name: "Everyday Carry Bag",
+        category: "Accessories",
+        price: 58,
+        tag: "Popular",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 5,
+        name: "Minimal Timepiece",
+        category: "Accessories",
+        price: 75,
+        tag: "",
+        image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 6,
+        name: "Everyday Sunglasses",
+        category: "Accessories",
+        price: 36,
+        tag: "New",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 7,
+        name: "Ceramic Ritual Cup",
+        category: "Lifestyle",
+        price: 24,
+        tag: "",
+        image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 8,
+        name: "Scented Home Candle",
+        category: "Lifestyle",
+        price: 29,
+        tag: "Favourite",
+        image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80"
+      }
+    ];
+
+    const cart = new Map();
+    let activeFilter = "All";
+
+    const productsGrid = document.getElementById("productsGrid");
+    const productCount = document.getElementById("productCount");
+    const cartCount = document.getElementById("cartCount");
+    const cartDrawer = document.getElementById("cartDrawer");
+    const overlay = document.getElementById("overlay");
+    const cartItems = document.getElementById("cartItems");
+    const cartSubtotal = document.getElementById("cartSubtotal");
+    const checkoutButton = document.getElementById("checkoutButton");
+
+    const money = amount => "£" + amount.toFixed(2);
+
+    function renderProducts() {
+      const filtered = activeFilter === "All"
+        ? products
+        : products.filter(product => product.category === activeFilter);
+
+      productCount.textContent = filtered.length + (filtered.length === 1 ? " piece" : " pieces");
+
+      if (!filtered.length) {
+        productsGrid.innerHTML = '<p class="no-products">No products in this collection yet.</p>';
+        return;
+      }
+
+      productsGrid.innerHTML = filtered.map(product => `
+        <article class="product-card">
+          <div class="product-image">
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x750/e9dfd0/25231f?text=VELORA';"
+            >
+            ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ""}
+          </div>
+          <div class="product-details">
+            <div class="product-category">${product.category}</div>
+            <div class="product-title">${product.name}</div>
+            <div class="product-bottom">
+              <span class="product-price">${money(product.price)}</span>
+              <button class="add-button" type="button" data-add="${product.id}" aria-label="Add ${product.name} to bag">+ Add to Bag</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function getQuantity() {
+      let total = 0;
+      cart.forEach(item => total += item.quantity);
+      return total;
+    }
+
+    function getSubtotal() {
+      let total = 0;
+      cart.forEach(item => total += item.product.price * item.quantity);
+      return total;
+    }
+
+    function addToCart(id) {
+      const product = products.find(item => item.id === id);
+      if (!product) return;
+
+      if (cart.has(id)) {
+        cart.get(id).quantity += 1;
+      } else {
+        cart.set(id, { product, quantity: 1 });
+      }
+
+      renderCart();
+      openCart();
+    }
+
+    function changeQuantity(id, delta) {
+      const item = cart.get(id);
+      if (!item) return;
+
+      item.quantity += delta;
+
+      if (item.quantity <= 0) cart.delete(id);
+
+      renderCart();
+    }
+
+    function removeFromCart(id) {
+      cart.delete(id);
+      renderCart();
+    }
+
+    function renderCart() {
+      cartCount.textContent = getQuantity();
+      cartSubtotal.textContent = money(getSubtotal());
+
+      if (cart.size === 0) {
+        cartItems.innerHTML = '<div class="empty-cart">Your bag is waiting for something lovely.</div>';
+        checkoutButton.disabled = true;
+        checkoutButton.style.opacity = ".5";
+        return;
+      }
+
+      checkoutButton.disabled = false;
+      checkoutButton.style.opacity = "1";
+
+      cartItems.innerHTML = Array.from(cart.values()).map(item => `
+        <div class="cart-item">
+          <img src="${item.product.image}" alt="" loading="lazy">
+          <div>
+            <strong>${item.product.name}</strong>
+            <small>${money(item.product.price)}</small>
+            <div class="quantity-controls">
+              <button type="button" data-decrease="${item.product.id}" aria-label="Decrease quantity">−</button>
+              <span>${item.quantity}</span>
+              <button type="button" data-increase="${item.product.id}" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="remove-item" type="button" data-remove="${item.product.id}">Remove</button>
+          </div>
+          <span class="cart-item-price">${money(item.product.price * item.quantity)}</span>
+        </div>
+      `).join("");
+    }
+
+    function openCart() {
+      cartDrawer.classList.add("open");
+      overlay.classList.add("open");
+      cartDrawer.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      document.getElementById("closeCart").focus();
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove("open");
+      overlay.classList.remove("open");
+      cartDrawer.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      document.getElementById("openCart").focus();
+    }
+
+    productsGrid.addEventListener("click", event => {
+      const button = event.target.closest("[data-add]");
+      if (button) addToCart(Number(button.dataset.add));
+    });
+
+    cartItems.addEventListener("click", event => {
+      const increase = event.target.closest("[data-increase]");
+      const decrease = event.target.closest("[data-decrease]");
+      const remove = event.target.closest("[data-remove]");
+
+      if (increase) changeQuantity(Number(increase.dataset.increase), 1);
+      if (decrease) changeQuantity(Number(decrease.dataset.decrease), -1);
+      if (remove) removeFromCart(Number(remove.dataset.remove));
+    });
+
+    document.querySelectorAll("[data-filter]").forEach(button => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+
+        document.querySelectorAll("[data-filter]").forEach(item => {
+          item.classList.toggle("active", item === button);
+        });
+
+        renderProducts();
+      });
+    });
+
+    document.querySelectorAll("[data-category-link]").forEach(link => {
+      link.addEventListener("click", () => {
+        activeFilter = link.dataset.categoryLink;
+
+        document.querySelectorAll("[data-filter]").forEach(button => {
+          button.classList.toggle("active", button.dataset.filter === activeFilter);
+        });
+
+        renderProducts();
+      });
+    });
+
+    document.getElementById("openCart").addEventListener("click", openCart);
+    document.getElementById("closeCart").addEventListener("click", closeCart);
+    overlay.addEventListener("click", closeCart);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && cartDrawer.classList.contains("open")) {
+        closeCart();
+      }
+    });
+
+    checkoutButton.addEventListener("click", () => {
+      if (cart.size === 0) return;
+
+      const lines = Array.from(cart.values()).map(item =>
+        `${item.product.name} x ${item.quantity} — ${money(item.product.price * item.quantity)}`
+      );
+
+      const summary =
+        "VELORA demo storefront enquiry\n\n" +
+        lines.join("\n") +
+        "\n\nSubtotal: " + money(getSubtotal()) +
+        "\n\nThis is a fictional portfolio enquiry. Please confirm availability and final prices.";
+
+      // Demo only: opens an email draft, not a real checkout or payment.
+      const subject = encodeURIComponent("VELORA Storefront Product Enquiry");
+      const body = encodeURIComponent(summary);
+
+      window.location.href =
+        "mailto:hello@example.com?subject=" + subject + "&body=" + body;
+    });
+
+    document.getElementById("newsletterForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const email = document.getElementById("newsletterEmail").value.trim();
+
+      if (!email) return;
+
+      document.getElementById("newsletterMessage").textContent =
+        "Thank you! This demo does not subscribe or store email addresses.";
+
+      event.target.reset();
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
