@@ -1046,3 +1046,260 @@ footer {
     box-sizing: border-box;
   }
 }
+/* ===== AUMICO STUDIO PRICING SECTION ===== */
+
+.pricing {
+  padding: 100px 20px;
+  background: #0b0b10;
+  color: #f5f5f7;
+  font-family: Arial, sans-serif;
+}
+
+.pricing-container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.pricing-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.pricing-label {
+  color: #b69cff;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.pricing-heading h2 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 18px 0;
+}
+
+.pricing-heading h2 span {
+  color: #b69cff;
+}
+
+.pricing-heading p,
+.plan-description {
+  color: #aaaab8;
+  line-height: 1.7;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: #14141c;
+  border: 1px solid #30303d;
+  border-radius: 18px;
+  padding: 32px 25px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-7px);
+  border-color: #b69cff;
+}
+
+.featured-plan {
+  border-color: #b69cff;
+  background: linear-gradient(160deg, #20192e, #14141c 65%);
+  box-shadow: 0 0 20px rgba(182, 156, 255, 0.18);
+}
+
+.featured-plan:hover {
+  box-shadow: 0 0 25px rgba(182, 156, 255, 0.35);
+}
+
+.plan-tag,
+.popular-tag {
+  color: #c5afff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.popular-tag {
+  margin-bottom: 18px;
+}
+
+.pricing-card h3 {
+  font-size: 27px;
+  margin: 18px 0 8px;
+}
+
+.plan-description {
+  font-size: 14px;
+  min-height: 48px;
+}
+
+.plan-price {
+  font-size: 31px;
+  font-weight: 800;
+  margin-top: 18px;
+  white-space: nowrap;
+}
+
+.plan-price span {
+  font-size: 13px;
+  color: #c5afff;
+}
+
+.price-note {
+  color: #9292a2;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.plan-features li {
+  color: #dedee8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.plan-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #111018;
+  background: #c1a7ff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: auto;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.plan-button:hover {
+  background: #d5c5ff;
+  transform: translateY(-2px);
+}
+
+.pricing-note {
+  text-align: center;
+  color: #9292a2;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 35px;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing {
+    padding: 65px 16px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card {
+    padding: 28px 22px;
+  }
+}
+
+/* ===== CONTACT SECTION POLISH ===== */
+
+#contact {
+  padding: 90px 24px;
+  margin: 50px auto;
+  max-width: 1150px;
+}
+
+#contact .contact {
+  text-align: center;
+  padding: 70px 35px;
+  border: 1px solid rgba(182, 156, 255, 0.35);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 0%,
+      rgba(142, 94, 255, 0.18), transparent 60%),
+    linear-gradient(145deg, #17131f, #0e0e14);
+  box-shadow: 0 0 35px rgba(145, 100, 255, 0.09);
+}
+
+#contact .eyebrow {
+  color: #c2aaff;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+#contact h2 {
+  color: #fff;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  color: #b8b3c6;
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 auto 28px;
+}
+
+#contact .hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+#contact .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 170px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#contact .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(182, 156, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+  #contact {
+    padding: 55px 16px;
+    margin: 25px auto;
+  }
+
+  #contact .contact {
+    padding: 45px 20px;
+  }
+
+  #contact .hero-actions {
+    flex-direction: column;
+  }
+
+  #contact .btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
